@@ -1,0 +1,68 @@
+#sitrow1>div, #sitrow2>div, #sitrow3>div, #sitrow4>div, #sitrow5>div{
+    display: inline-block;
+    text-align:center;
+}
+#sitrow1>div>button,#sitrow2>div>button,#sitrow4>div>button,#sitrow3>div>button,#sitrow5>div>button{
+    padding:10px;
+    border:none;
+    background:none;
+}
+#sittable{
+    width:100%;
+    height:100%;
+    background-image: url('../image/sittableBG.jpg');
+}
+#sittable, #sitfinishbox{
+    text-align:center;
+}
+
+/* 고객 숫자 입력  css */
+#amount_adult>div, #amount_teen>div, #amount_kids>div{
+    display:inline-block;
+}
+#sitamount_list, #sitamount_modulate{
+    width:500px;
+    display:inline-block;
+}
+#sitamount_list>div{
+    margin:5px;
+}
+#sitamount_modulate{
+    left:195px;
+    position: relative;
+    text-align:right;
+}
+#totalbox{
+    text-align:right;
+}
+#totalamount{
+    width:50px;
+    height:30px;
+    font-size:20px;
+    border:none;
+    padding-bottom:5px;
+    text-align:center;
+}
+#amount1, #amount2, #amount3{
+    position:relative;
+    top:-9px;
+    width:50px;
+    height:30px;
+    font-size:20px;
+    border:none;
+    padding-bottom:5px;
+    text-align:center;
+}
+#amount_adult button, #amount_teen button, #amount_kids button{
+    border:none;
+}
+
+
+/* 선택완료 버튼 */
+#sitfinishBtn{
+    font-size:36px;
+    text-align: center;
+}
+.sit_selected{
+    
+}

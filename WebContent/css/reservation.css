@@ -1,0 +1,51 @@
+*{text-decoration:none;}
+ul {
+    list-style:none;
+}
+.cont ul{
+    text-align:center;
+}
+h1{padding-bottom:10px;}
+.cont{
+    position:relative;
+}
+#sidepage{
+    height:1135px;
+}
+.movielist , .theaterlist , .citylist , #arealist{
+    display:inline-block;
+    position:absolute;
+}
+li{
+    padding:10px;
+}
+.movielist{left:12%}
+.theaterlist{left:32%;}
+.citylist{left:52%;}
+#arealist{left:72%;}
+.cont{height:540px;}
+footer{
+    text-align:center;
+    padding:20px;
+    position:relative;
+    margin:0 auto;
+}
+.seoul, .kyeonggi_incheon, .choongcheong_daejeon, .jeonna_gwangju, .kyeongbuk_daegu, .busan, .kangwon, .jeju{
+    display:none;
+    position:relative;
+}
+.change{
+    background-color:black;
+    color:white;
+}
+.start{
+    pointer-events:none;
+}
+#reservfinish{
+    background-color: rgb(96, 147, 240);
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+    color:white;
+}
+.selected{}

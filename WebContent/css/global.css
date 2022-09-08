@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper {
+    position:relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* ****************사이드바******************** */
+.mainmenu_div ul {
+    list-style: none;
+    text-align: center;
+}
+
+.logo_div {
+    position: relative;
+    height: 200px;
+}
+
+.logo_div .logoBox1 {
+    position: absolute;
+}
+
+.logo_div .dropoutBtnBox1 {
+    position: absolute;
+    left: 1001px;
+    border:none;
+}
+#sidepage{
+    position:absolute;
+    right:-600px;
+    width:500px;
+    height:100%;
+    z-index:1112;
+    transition:all 0.3s;
+    background-color:white;
+}
+.profile{
+    border-bottom:2px solid rgb(84, 154, 211);
+}
+.profile_icon{
+    margin:20px;
+}
+#loginBtn, #joinBtn, #logoutBtn{
+    width:100px;
+    height:50px;
+    color:white;
+    background-color:rgb(84, 154, 211);
+    border:none;
+    position:relative;
+    font-size:20px;
+    font-weight:bold;
+    top:-77px;
+    margin:10px;
+}
+.loginoutBtn {
+	display:none;
+}
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    display: none;
+    z-index:1111;
+    background-color:rgba(0,0,0,0.7);
+}
+.profile{
+    transition:all 0.3s;
+    position: absolute;
+    display:none;
+    width:100%;
+}
+.beforelogin{display:none;transition:all 0.3s;}
+.afterlognin{display:none;transition:all 0.3s;}
+
+.sidemenu ul{
+    list-style:none;
+    font-size:36px;
+    padding:10px;
+}
+.sidemenu{
+    display:none;
+    top:300px;
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+.sidemenu li{padding:20px 20px 20px 30px; font-size:24px;}
+.sidemenu li a{text-decoration:none;}
+.eventtab{text-decoration:none;}
+/* ==============메인메뉴=================== */
+.mainmenu_div {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.mainmenu_div .menu1, .menu2, .menu3, .menu4{
+    border:none;
+}
+
+.mainmenu_ .menu1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mainmenu_div .menu2 {
+    position: absolute;
+    left: 300px;
+}
+
+.mainmenu_div .menu3 {
+    position: absolute;
+    left: 600px;
+}
+
+.mainmenu_div .menu4 {
+    position: absolute;
+    left: 900px;
+}
+/* =============메인메뉴 밑에 서브메뉴=================== */
+#submenu1_div,#submenu2_div,#submenu3_div,#submenu4_div {
+    display:inline-block;
+    width:300px;
+    height:50px;
+    position: relative;
+}
+
+#submenu1_div>ul,#submenu2_div>ul,#submenu3_div>ul,#submenu4_div>ul {
+    position: absolute;
+}
+
+#submenu1_div>ul>a>li,#submenu2_div>ul>a>li,#submenu3_div>ul>a>li,#submenu4_div>ul>a>li {
+    list-style: none;
+    display: inline-block;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    color: black;
+}
+
+.topBtn{
+    border:none;
+    position:fixed;
+    top:90%;
+    left:95%;
+    z-index:1111;
+}
+.menuvisible{
+    visibility:visible;
+}
+.menuhidden{
+    visibility:hidden;
+}

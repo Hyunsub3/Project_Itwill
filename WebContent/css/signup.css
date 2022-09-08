@@ -1,0 +1,23 @@
+.signupBox h1{
+    text-align:center;
+}
+.signupinfo{
+    margin:0 auto;
+    padding:50px;
+}
+.signupinfo tr, td{
+    padding:20px;
+}
+#sidepage{
+    height:1167px;
+}
+.signupinfo tr td{
+    font-size:36px;
+}
+.signupinfo tr td input{
+    height:50px;
+    font-size:30px;
+}
+.signupinfo tr td #signupId, #signupPw, #signupName, #signupNickname{
+    width:100%;
+}

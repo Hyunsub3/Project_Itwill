@@ -1,0 +1,23 @@
+.loginpage1 {
+    margin:0 auto;
+    font-size:36px;
+}
+h1{
+    text-align:center;
+    margin-top:100px;
+}
+.loginpage1 .inputinfo{
+    width:377px;
+    height:48px;
+    font-size:30px;
+}
+.loginpage1{
+    padding-top:50px;
+}
+
+.signupguide{
+    text-decoration:none;
+}
+#sidepage{
+    height:1167px;
+}

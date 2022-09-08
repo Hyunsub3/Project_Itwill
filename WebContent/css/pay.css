@@ -1,0 +1,33 @@
+#nextwrapper{
+    text-align:center;
+}
+#selImg, #selText{
+    display:inline-block;
+}
+#selText{
+    padding-left:100px;
+    width:540px;
+    position: relative;
+    top: -338px;
+}
+#pay1Box, #pay2Box, #pay3Box, #pay4Box{
+    display:inline-block;
+}
+#pay1Box, #pay3Box{
+    padding:40px 150px 40px 40px;
+}
+#pay2Box, #pay4Box{
+    padding:40px 40px 40px 150px;
+}
+#payTable{
+    position:relative;
+    width:844px;
+    height:100%;
+}
+#selText, #payTable {font-size:24px;}
+#reservCanclebtn{
+    position:relative;
+    width:300px;
+    left:900px;
+    font-size:48px;
+}
