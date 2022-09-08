@@ -1,13 +1,14 @@
 package com.cinemaw.member.db;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class MemberVo {
 
 	private String u_id;    
 	private String u_pw;    
 	private String u_nm;    
-	private Date u_join_dt; 
+	private Timestamp u_join_dt; 
 	private String birth;   
 	private String email;   
 	private String phone;   
@@ -43,11 +44,12 @@ public class MemberVo {
 		this.u_nm = u_nm;
 	}
 
-	public Date getU_join_dt() {
+
+	public Timestamp getU_join_dt() {
 		return u_join_dt;
 	}
 
-	public void setU_join_dt(Date u_join_dt) {
+	public void setU_join_dt(Timestamp u_join_dt) {
 		this.u_join_dt = u_join_dt;
 	}
 
@@ -114,8 +116,8 @@ public class MemberVo {
 
 	}
 
-	public MemberVo(String u_id, String u_pw, String u_nm, Date u_join_dt, String birth, String email, String phone,
-			String snstype, String snsid, String grade, String favorit, String mailing) {
+	public MemberVo(String u_id, String u_pw, String u_nm, Timestamp u_join_dt, String birth, String email,
+			String phone, String snstype, String snsid, String favorit, String mailing) {
 		super();
 		this.u_id = u_id;
 		this.u_pw = u_pw;
@@ -129,6 +131,8 @@ public class MemberVo {
 		this.favorit = favorit;
 		this.mailing = mailing;
 	}
+
+	
 
 //	@Override
 //	public String toString() {

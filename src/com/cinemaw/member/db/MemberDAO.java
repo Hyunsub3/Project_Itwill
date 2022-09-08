@@ -6,27 +6,25 @@ import org.apache.catalina.connector.Request;
 
 public class MemberDAO {
 	
-	// DAO : �����ͺ��̽� ���� ��ü_���������� DB���� ȸ�������� �ҷ����ų� ���� �� �����
 	
-	// ���뺯�� (�ν��Ͻ� ����)
 	private Connection con = null; 
 	private PreparedStatement pstmt = null; 
 	private ResultSet rs = null;
 	private String sql = "";
 	int count = 0;
 
-	// ��� ����
+	
 //	private Connection getConnect() throws Exception {
 
 	
-	// mysql�� �����ϴ� �κ�
+	
 	public void MemberInsert(MemberVo vo) { 
       
 		
 		
          try {
             String DRIVER = "com.mysql.cj.jdbc.Driver";
-            String DBURL = "jdbc:mysql://localhost:3306/movieswill";
+            String DBURL = "jdbc:mysql://localhost:3306/jspdb";
             String DBID = "root";
             String DBPW = "1234";
 
@@ -46,18 +44,17 @@ public class MemberDAO {
             pstmt.setString(1,vo.getU_id());
             pstmt.setString(2,vo.getU_pw());
             pstmt.setString(3,vo.getU_nm());
-            //pstmt.setString(4,dto.getU_join_dt()); 둘중에 하나
-            pstmt.setDate(4, vo.getU_join_dt());
+            pstmt.setTimestamp(4, vo.getU_join_dt());
             pstmt.setString(5,vo.getBirth());
             pstmt.setString(6,vo.getEmail());
             pstmt.setString(7,vo.getPhone());
             pstmt.setString(8,vo.getSnstype());
             pstmt.setString(9,vo.getSnsid());
-            pstmt.setString(10,vo.getFavorit());
+            pstmt.setString(10, vo.getFavorit());            
             pstmt.setString(11,vo.getMailing());
             
 
-            //     
+               
             count = pstmt.executeUpdate();
             
             
