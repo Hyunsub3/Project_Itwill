@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -5,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/recent_movie.css" />
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/signup.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/login.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -132,76 +134,29 @@
 				<img src="image/TopBtn.jpg" alt="">
 			</button>
 		</div>
-		<article class="signupBox">
-			<h1>회원가입</h1>
-			<table class="signupinfo">
-				<form action="insert.jsp" method="post">
+		<article>
+			<h1>로그인</h1>
+			<table class="loginpage1">
+				<form action="loginAct.jsp" method="post">
 					<tr>
-						<td>✔ 아이디 :</td>
-						<td><input type="text" name="u_id"></td>
+						<td>아이디 :</td>
+						<td colspan="2"><input type="text" class="inputinfo"
+							name="loginId"></td>
 					</tr>
 					<tr>
-						<td>✔ 비밀번호 :</td>
-						<td><input type="password" name="u_pw"></td>
+						<td>비밀번호 :</td>
+						<td colspan="2"><input type="password" class="inputinfo"
+							name="loginPw"></td>
 					</tr>
-					<tr>
-						<td>✔ 이름 :</td>
-						<td><input type="text" name="u_nm"></td>
-					</tr>
-					<tr>
-						<td>✔ 생년월일 :</td>
-						<td><input type="text" name="birth"></td>
-					</tr>
-					<tr>
-						<td>✔ 이메일 :</td>
-						<td><input type="text" id="email" name="email"></td>
-					</tr>
-					<tr>
-						<td>✔ 휴대전화 :  </td>
-						<td><input type="tel" name="phone"></td>
-					</tr>
-					
-					
-					<tr>
-						<td>✔ 즐겨보는 장르 :  </td>
-						<td><input type="checkbox" name="favorit" value="스릴러">스릴러
-						<input type="checkbox" name="favorit" value="미스테리">미스테리
-						<input type="checkbox" name="favorit" value="멜로">멜로
-						<input type="checkbox" name="favorit" value="로맨틱코미디">로맨틱 코미디
-						<input type="checkbox" name="favorit" value="어드벤처">어드벤처
-						<input type="checkbox" name="favorit" value="정치">정치
-						<input type="checkbox" name="favorit" value="판타지">판타지<br>
-						<input type="checkbox" name="favorit" value="애니메이션">애니메이션
-						<input type="checkbox" name="favorit" value="다큐멘터리">다큐멘터리
-						<input type="checkbox" name="favorit" value="느와르">느와르
-						<input type="checkbox" name="favorit" value="공상과학">공상과학
-						<input type="checkbox" name="favorit" value="액션">액션
-						<input type="checkbox" name="favorit" value="코미디">코미디 </td>
-					</tr>
-					
-					<hr>
-					
-					<tr>
-					<td>✔ 메일링 서비스 동의 :</td>
-					<td><input type="radio" name="mailing" value="동의">동의
-	                <input type="radio" name="mailing" value="동의안함">동의안함</td>
-					
-					</tr>
-					
-					
-					
-					
-					
-					<tr>
+					<tr class="buttonSet">
 						<td></td>
-						<td><input type="submit" value="회원가입"
-							style="font-size: 36px; padding: 0px 20px; height: 72px;">
-							<a href="login.html"><button
-									style="font-size: 36px; margin-left: 50px; padding: 10px 20px 10px 20px;">취소</button></a>
-						</td>
+						<td><input type="submit" value="로그인"
+							style="font-size: 36px; width: 100%;"></td>
+						<td></td>
 					</tr>
 				</form>
 			</table>
+			<a href="signUp.html" class="signupguide"><h1>회원이 아니신가요?</h1></a>
 		</article>
 	</div>
 </body>

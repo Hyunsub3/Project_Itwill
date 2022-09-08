@@ -1,29 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/recent_movie.css" />
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/signup.css" />
+<title>Movigo</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/maincss.css" />
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="js/main_script.js"></script>
 <script type="text/javascript">
 	var sessionID = sessionStorage.getItem("id");
+	sessionStorage.removeItem("allprice");
 </script>
 <script>
 	//alert(sessionID);
 	$(document).ready(function() {
 		$("#userID").text(sessionID);
-	})
+	});
 </script>
-<title>Movigo</title>
+
 </head>
 
 <body>
+
 	<div id="wrapper">
 		<div class="overlay"></div>
 		<div id="sidepage">
@@ -127,86 +133,60 @@
 				</div>
 			</div>
 		</header>
-		<div class="topBtn">
-			<button onclick="window.scrollTo(0,0);">
+		<div>
+			<button class="topBtn" onclick="window.scrollTo(0,0);">
 				<img src="image/TopBtn.jpg" alt="">
 			</button>
 		</div>
-		<article class="signupBox">
-			<h1>회원가입</h1>
-			<table class="signupinfo">
-				<form action="insert.jsp" method="post">
-					<tr>
-						<td>✔ 아이디 :</td>
-						<td><input type="text" name="u_id"></td>
-					</tr>
-					<tr>
-						<td>✔ 비밀번호 :</td>
-						<td><input type="password" name="u_pw"></td>
-					</tr>
-					<tr>
-						<td>✔ 이름 :</td>
-						<td><input type="text" name="u_nm"></td>
-					</tr>
-					<tr>
-						<td>✔ 생년월일 :</td>
-						<td><input type="text" name="birth"></td>
-					</tr>
-					<tr>
-						<td>✔ 이메일 :</td>
-						<td><input type="text" id="email" name="email"></td>
-					</tr>
-					<tr>
-						<td>✔ 휴대전화 :  </td>
-						<td><input type="tel" name="phone"></td>
-					</tr>
-					
-					
-					<tr>
-						<td>✔ 즐겨보는 장르 :  </td>
-						<td><input type="checkbox" name="favorit" value="스릴러">스릴러
-						<input type="checkbox" name="favorit" value="미스테리">미스테리
-						<input type="checkbox" name="favorit" value="멜로">멜로
-						<input type="checkbox" name="favorit" value="로맨틱코미디">로맨틱 코미디
-						<input type="checkbox" name="favorit" value="어드벤처">어드벤처
-						<input type="checkbox" name="favorit" value="정치">정치
-						<input type="checkbox" name="favorit" value="판타지">판타지<br>
-						<input type="checkbox" name="favorit" value="애니메이션">애니메이션
-						<input type="checkbox" name="favorit" value="다큐멘터리">다큐멘터리
-						<input type="checkbox" name="favorit" value="느와르">느와르
-						<input type="checkbox" name="favorit" value="공상과학">공상과학
-						<input type="checkbox" name="favorit" value="액션">액션
-						<input type="checkbox" name="favorit" value="코미디">코미디 </td>
-					</tr>
-					
-					<hr>
-					
-					<tr>
-					<td>✔ 메일링 서비스 동의 :</td>
-					<td><input type="radio" name="mailing" value="동의">동의
-	                <input type="radio" name="mailing" value="동의안함">동의안함</td>
-					
-					</tr>
-					
-					
-					
-					
-					
-					<tr>
-						<td></td>
-						<td><input type="submit" value="회원가입"
-							style="font-size: 36px; padding: 0px 20px; height: 72px;">
-							<a href="login.html"><button
-									style="font-size: 36px; margin-left: 50px; padding: 10px 20px 10px 20px;">취소</button></a>
-						</td>
-					</tr>
-				</form>
-			</table>
+		<article class="content1">
+			<h1>상영중인 영화</h1>
+			<div class="main_slide">
+				<div class="main_slide_box">
+					<a href="#"><img src="image/slide1.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/slide2.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/slide3.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent4.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent5.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent6.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent7.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent8.jpg" alt=""></a>
+				</div>
+				<div class="main_slide_box">
+					<a href="#"><img src="image/recent9.jpg" alt=""></a>
+				</div>
+			</div>
 		</article>
+
+		<article class="content2">
+			<h1>이벤트 목록</h1>
+			<div class="event_box">
+				<a href="#"><img src="image/event1.jpg" alt="" class="eventBtn1"></a>
+				<a href="#"><img src="image/event2.jpg" alt="" class="eventBtn2"></a>
+				<a href="#"><img src="image/event3.jpg" alt="" class="eventBtn3"></a>
+				<a href="#"><img src="image/event4.jpg" alt="" class="eventBtn4"></a>
+				<a href="#"><img src="image/event5.jpg" alt="" class="eventBtn5"></a>
+			</div>
+		</article>
+		<footer>
+			<img src="image/footer.png" alt="">
+		</footer>
+
 	</div>
+
 </body>
 
-</html>
-</body>
-
-</html>
+</html>>
