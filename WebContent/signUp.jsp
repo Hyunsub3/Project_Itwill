@@ -32,10 +32,27 @@ $(document).ready(function(){
 });
 </script>
 <script>
+
+
+</script>
+<script>
 	//alert(sessionID);
 	$(document).ready(function() {
 		$("#userID").text(sessionID);
 	})
+</script>
+
+<script>
+$(document).ready(function(){
+	$('#fr').submit(function(){ //폼태그에 이벤트 적용 
+
+		if($('#c1').is(':checked') == false)  {
+			alert('약관에 동의하세요.');
+			return false; //되돌아가기
+		}
+	}); 
+});
+
 </script>
 
 <title>Movigo</title>
@@ -155,7 +172,7 @@ $(document).ready(function(){
 		<article class="signupBox">
 			<h1>회원가입</h1>
 			<table class="signupinfo">
-				<form action="insert.jsp" method="post">
+				<form action="insert.jsp" method="post" id="fr">
 					<tr>
 						<td>✔ 아이디 :</td>
 						<td><input type="text" name="u_id" id="u_id" style="width:300px;height:40px;font-size:25px;">
@@ -239,7 +256,7 @@ $(document).ready(function(){
 ⑦"게시물"이라 함은 "회원"이 "서비스"를 이용함에 있어 "서비스상"에 게시한 부호ㆍ문자ㆍ음성ㆍ음향ㆍ화상ㆍ동영상 등의 정보 형태의 글, 사진, 동영상 및 각종 파일과 링크 등을 의미합니다. 
 					
 					</textarea>
-					<h3><a href="#"><font size="2">개인정보 수집 및 이용에 대한 안내(필수)</font><input type="checkbox" name="c2" id="c2"/></a></h3>
+					<h3><input type="checkbox" name="c1" id="c1" value="c1"><font size="2">개인정보 수집 및 이용에 대한 안내(필수)</font></h3>
 					</tr>
 					
 					
