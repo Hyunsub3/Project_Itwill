@@ -5,10 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PointDAO {
+public class PointDAO2 {
 
 		private Connection con = null; 
 		private PreparedStatement pstmt = null; 
@@ -53,9 +54,9 @@ public class PointDAO {
 		//자원해제
 		
 		//포인트 목록 조회 (all) - getPoint() 
-		public List<PointDTO> getPointList(){
+		public List<PointDTO2> getPointList2(){
 			
-			List<PointDTO> pointList = new ArrayList<PointDTO>();
+			List<PointDTO2> pointList2 = new ArrayList<PointDTO2>();
 			
 			//DB테이블에 있는 데이터를 꺼내오기
 			
@@ -64,22 +65,19 @@ public class PointDAO {
 				//2. 디비연결
 				con = getConnect();
 				//3. sql 작성 & pstmt 객체
-				sql = "select * from point";
+				sql = "select * from reserve_info;";
+				Statement stmt = con.createStatement();
 				pstmt =con.prepareStatement(sql);
 				
 				//4. sql 실행
-				rs = pstmt.executeQuery();
+				rs = stmt.executeQuery(sql);
 				
 				//5. 데이터 처리 
 				while(rs.next()){
-					PointDTO dto = new PointDTO();
-					dto.setU_id(rs.getString("u_id"));
-					dto.setP_seq(rs.getInt("p_seq"));
-					dto.setP_type(rs.getString("p_type"));
-					dto.setPoint(rs.getInt("point"));
-					dto.setP_dt(rs.getDate("p_dt"));
-					
-					pointList.add(dto);
+					PointDTO2 dto2 = new PointDTO2();
+					dto2.setR_id(rs.getString("r_id"));
+					dto2.setR_user_point(rs.getInt("r_user_point"));
+					pointList2.add(dto2);
 					
 				}
 				
@@ -87,19 +85,67 @@ public class PointDAO {
 				e.printStackTrace();
 			}
 			
-			return pointList;
+			return pointList2;
 			
 			
 			
 			
 			}
 		
-		public int PointTotal1() {
+		
+		//실험 이거는 왜 안되는지 이해가 안됐어요 제가 pstmt 이거 한지가 넘 오래돼서 
+//public List<PointDTO2> PointTotal3(){
+//			
+//			List<PointDTO2> pointList3 = new ArrayList<PointDTO2>();
+//			
+//			//DB테이블에 있는 데이터를 꺼내오기
+//			
+//			
+//				//1. 드라이버 로드
+//				//2. 디비연결
+//				try {
+//					con = getConnect();
+//					//3. sql 작성 & pstmt 객체
+//					sql = "select sum(r_user_point) as 'total' from reserve_info;";
+//					pstmt =con.prepareStatement(sql);
+//					
+//					//4. sql 실행
+//					rs = pstmt.executeQuery();
+//					String test = rs.getString("total");
+//					
+//					System.out.print("실행");
+//					//5. 데이터 처리
+//						PointDTO2 dto3 = new PointDTO2(); //이쪽 객체 생성한거랑 다른 껍데기라고,,, 
+////						dto3.setTotal(rs.getInt("total"));
+////						pointList3.add(dto3);
+//						
+//				} catch (Exception e) {
+//					StackTraceElement[] ste = e.getStackTrace();
+//				    String className = ste[0].getClassName();
+//				    String methodName = ste[0].getMethodName();
+//				    int lineNumber = ste[0].getLineNumber();
+//				    String fileName = ste[0].getFileName();
+//				    System.out.println("Exception : " + e.getMessage());
+//				    System.out.println(className + "." + methodName + " " + fileName + " " + lineNumber + "line");
+//				}
+//				
+//					
+//			
+//			return pointList3;  
+//			
+//			
+//			
+//			
+//			}
+		
+		
+		//이걸로 다시작성하고 리턴으로 int(select sum(r_user_point) as 'total' from reserve_info;) 이거 보냅니다
+		public int PointTotal3() {
 			int result = 0;
 			try {
 				con = getConnect();
 				//3. sql 작성 & pstmt 객체
-				sql = "select sum(point) as 'total' from point;";
+				sql = "select sum(r_user_point) as 'total' from reserve_info;";
 				pstmt =con.prepareStatement(sql);
 				
 				//4. sql 실행
@@ -120,7 +166,7 @@ public class PointDAO {
 			}
 			return result;
 		}
-	   
-}
+		
+	   }
 
 

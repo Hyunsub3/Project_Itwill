@@ -9,6 +9,17 @@ public class PointDTO {
 	private String p_type; //포인트 유형
 	private int point; //포인트
 	private Date p_dt; //포인트 지급 날짜
+	private int total; //포인트 합계
+	
+	
+	
+	
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	
 	
 	public String getU_id() {
@@ -42,7 +53,10 @@ public class PointDTO {
 		this.p_dt = p_dt;
 	}
 	
-	
+	public String toString(){
+		
+		return "toString : " + this.getP_type() + this.getU_id() + this.getP_seq() + this.getPoint();
+	}
 	
 	
 }

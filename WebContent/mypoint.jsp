@@ -1,3 +1,5 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.cinemaw.point.db.PointDTO2"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="java.util.List"%>
 <%@page import="com.cinemaw.point.db.PointDTO"%>
@@ -137,11 +139,11 @@
 			</button>
 		</div>
 		<article style="height: 1164px;">
-			<h1 style="text-align: center;"> 💳 나의 포인트💳</h1> <br><br><br>
+			<h1 style="text-align: center;"> 💳 나의 적립 포인트💳</h1> <br><br><br>
 			
 			<%
 			List<PointDTO> pointList = (List<PointDTO>)request.getAttribute("pointList");
-			
+			System.out.println(pointList.toString());
 			String u_id = (String)request.getAttribute("u_id");
 			int p_seq = (Integer)request.getAttribute("p_seq");
 			String p_type = (String)request.getAttribute("p_type");
@@ -173,18 +175,83 @@
 			        <td><%=dto.getP_dt() %></td>
 			      </tr>
 		     <%
+
+			  } 
+							     
+		     %>
+		     
+		     
+			
+			</table>
+
+			<% 
+			List<PointDTO> pointList1 = (List<PointDTO>)request.getAttribute("pointList");
+			PointDTO dto1 = pointList1.get(0);
+			%> 
+			<br><br> 
+ 			<td>　　　　　　　🎁 총 지급금액 : <%=dto1.getTotal() %></td>  
+			<br><br><br><br>
+
+
+<!-- 사용 포인트 내역 ================================================================== -->
+			<hr>
+			<br><br><br><br>
+			<h1 style="text-align: center;"> 💳 나의 사용 포인트💳</h1> <br><br><br>
+			
+			<%
+			List<PointDTO2> pointList2 = (List<PointDTO2>)request.getAttribute("pointList2");
+			
+			String r_id = (String)request.getAttribute("r_id");
+			int r_use_point= (Integer)request.getAttribute("r_use_point");
+			
+			%>
+			
+			
+			
+			
+			<table border="1"  style="margin-left: auto; margin-right: auto; text-align: center;" width="1000">
+			<tr>
+			<td> 예매 번호 </td>
+			<td> 사용 금액 </td>
+			</tr>
+			
+			<%
+			  for(int i=0;i<pointList2.size();i++){ 
+		           // DB -> DTO -> List
+		          PointDTO2 dto2 = pointList2.get(i);
+		          
+		      %>
+			       <tr>
+			        <td><%=dto2.getR_id() %></td>
+			        <td><%=dto2.getR_user_point()%></td>
+			      </tr>
+		     <%
 		     
 			  	} 
 		     
 		     %>
 			
-			
-			
-			
-			
-			
-			
 			</table>
+
+
+			<% 
+ 			List<PointDTO2> pointList3 = (List<PointDTO2>)request.getAttribute("pointList2");
+			
+			
+			
+			PointDTO2 dto3 = pointList3.get(0);
+			%> 
+			<br><br> 
+ 			<td>　　　　　　　🎁 총 사용금액 : <%=dto3.getTotal() %></td>  <br><br><br><br>
+ 			
+ 			<hr>
+ 			<br><br><h3>　　　　　　　🎁 현재 사용 가능한  포인트는  <%=dto1.getTotal()-dto3.getTotal() %> 원입니다. 감사합니다💙</h3>
+			
+			
+				
+		
+
+
 			
 		</article>
 	</div>

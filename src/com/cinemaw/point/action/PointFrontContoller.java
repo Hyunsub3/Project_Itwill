@@ -34,6 +34,7 @@ public class PointFrontContoller extends HttpServlet {
 				System.out.println("\n  2. 가상주소 매핑 - 시작");
 				// 2. 가상주소 매핑------------------------------------------------
 				Action action = null;
+				Action action1 = null;
 				ActionForward forward = null;
 				
 				if(command.equals("/mypoint.bo")){
@@ -43,13 +44,17 @@ public class PointFrontContoller extends HttpServlet {
 					
 					//PointAction() 객체 생성
 					action= new PointAction();
+					action1 = new PointAction2();
 					try {
 						forward = action.execute(request, response);
+						forward = action1.execute(request, response);
+						
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 						}
 					}
+				
 					
 				// 2. 가상주소 매핑------------------------------------------------
 				System.out.println("  2. 가상주소 매핑 - 끝 \n");
