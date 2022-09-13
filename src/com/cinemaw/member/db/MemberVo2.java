@@ -1,4 +1,4 @@
-package jsppack;
+package com.cinemaw.member.db;
 
 public class MemberVo2 {
 
@@ -45,7 +45,7 @@ public class MemberVo2 {
 	public void setAreaSelect(String areaSelect) {
 		this.areaSelect = areaSelect;
 	}
-
+	
 	private String movieTitle;
 	private String theaterSelect;
 	private String citySelect;

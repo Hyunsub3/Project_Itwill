@@ -1,6 +1,9 @@
-package jsppack;
+package com.cinemaw.member.db;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class MemberDAO {
 	// DAO : 데이터베이스 접근 객체_실질적으로 DB에서 회원정보를 불러오거나 넣을 때 사용함
@@ -11,11 +14,11 @@ public class MemberDAO {
 	private ResultSet rs = null; // select 실행 결과 저장 객체
 	private String sql = ""; // SQL쿼리 구문 저장
 	int count = 0;
-
+	
 	// 디비 연결
 	// private Connection getConnect() throws Exception{
-
-
+	
+	
 	// mysql에 접속하는 부분
 	public void MemberInsert(MemberVo vo) {
 		// 생성자, 실행될때마다 자동으로 DB연결이 이루어지게함
@@ -39,7 +42,7 @@ public class MemberDAO {
 			// pstmt.setString(3, vo.getName());
 			// pstmt.setString(4, vo.getNickname());
 			// pstmt.setString(5, vo.getEmail());
-
+			
 			// 실행
 			count = pstmt.executeUpdate();
 			if (count > 0) {

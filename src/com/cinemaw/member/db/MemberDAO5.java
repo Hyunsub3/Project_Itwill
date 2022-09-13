@@ -1,4 +1,4 @@
-package jsppack;
+package com.cinemaw.member.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ public class MemberDAO5 {
 		String DBURL = "jdbc:mysql://localhost:3306/movieswill";
 		String DBID = "root";
 		String DBPW = "1234";
-
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 

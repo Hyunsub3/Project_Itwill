@@ -1,3 +1,5 @@
+<%@page import="com.cinemaw.member.db.MemberDAO4"%>
+<%@page import="com.cinemaw.member.db.MemberVo3"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" import="jsppack.*"
@@ -14,7 +16,7 @@
 	int priceAdult = Integer.parseInt(reservAdult) * 5000;
 	int priceTeen = Integer.parseInt(reservTeen) * 4000;
 	int priceKids = Integer.parseInt(reservKids) * 3000;
-
+	
 	int price = priceAdult + priceTeen + priceKids;
 	String priceStr = Integer.toString(price);
 	PrintWriter script = response.getWriter();

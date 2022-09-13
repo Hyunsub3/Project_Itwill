@@ -1,4 +1,4 @@
-package jsppack;
+package com.cinemaw.member.db;
 
 import java.sql.*;
 import java.util.ArrayList;

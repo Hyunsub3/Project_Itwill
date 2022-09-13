@@ -1,0 +1,279 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/recent_movie.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/reservation.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="js/main_script.js"></script>
+<script src="js/js_reservation.js"></script>
+<script type="text/javascript">
+	var sessionID = sessionStorage.getItem("id");
+	if (sessionID == null) {
+		alert("로그인이 필요한 서비스 입니다");
+		location.href = "login.html";
+	}
+</script>
+<script>
+	//alert(sessionID);
+	$(document).ready(function() {
+		$("#userID").text(sessionID);
+	})
+</script>
+<title>Movigo</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="overlay"></div>
+		<div id="sidepage">
+			<div class="profile">
+				<img src="image/profile_icon.jpg" alt="" class="profile_icon">
+				<a href="login.html"><button id="loginBtn" class="">로그인</button></a>
+				<a href="logout.jsp"><button id="logoutBtn" class="">로그아웃</button></a>
+				<a href="signUp.html"><button id="joinBtn" class="">회원가입</button></a>
+				<p style="text-align: center;" id="beforelogin">로그인이 필요합니다.</p>
+				<p style="text-align: center;" id="afterlogin">
+					<b id="userID">sessionID</b>님 환영합니다.
+				</p>
+			</div>
+			<script>
+				var btnLogin = document.getElementById('loginBtn');
+				var btnLogout = document.getElementById('logoutBtn');
+				var beforelog = document.getElementById('beforelogin');
+				var afterlog = document.getElementById('afterlogin');
+				if (sessionID == null) {
+					//로그인 안했을때
+					btnLogout.setAttribute('class', 'loginoutBtn');
+					btnLogin.setAttribute('class', '');
+					beforelog.setAttribute('class', '');
+					afterlog.setAttribute('class', 'loginoutBtn');
+				} else if (sessionID != null) {
+					//로그인했을때
+					btnLogin.setAttribute('class', 'loginoutBtn');
+					btnLogout.setAttribute('class', '');
+					beforelog.setAttribute('class', 'loginoutBtn');
+					afterlog.setAttribute('class', '');
+				}
+			</script>
+			<div class="sidemenu">
+				<ul>
+					<ul>
+						영화
+						<li><a href="recent_movie.html">상영중인 영화</a></li>
+					</ul>
+					<ul>
+						예매
+						<li><a href="reservation.html">예매하기</a></li>
+						<li><a href="timetable.html">상영시간표</a></li>
+					</ul>
+					<ul>
+						극장
+						<li><a href="theater.html">전체극장</a></li>
+					</ul>
+					<ul>
+						<a href="event.html" class="eventtab">이벤트</a>
+						</ui>
+					</ul>
+			</div>
+		</div>
+		<header>
+			<div class="logo_div">
+				<a href="main.html" class="logoBox1"> <img
+					src="image/main_logo.jpg" alt="메인페이지" class="logoBtn" />
+
+				</a>
+				<button class="dropoutBtnBox1">
+					<img src="image/dropout_btn.jpg" alt="마이메뉴" class="dropoutBtn">
+				</button>
+			</div>
+			<div class="mainmenu_div">
+				<button class="menu1">
+					<img src="image/menu_1.jpg" alt="">
+				</button>
+				<button class="menu2">
+					<img src="image/menu_2.jpg" alt="">
+				</button>
+				<button class="menu3">
+					<img src="image/menu_3.jpg" alt="">
+				</button>
+				<a href="event.html"><img src="image/menu_4.jpg" alt=""
+					class="menu4"></a>
+			</div>
+			<div class="submenu_box">
+				<div id="submenu1_div">
+					<ul>
+						<a href="recent_movie.html">
+							<li>상영중인영화</li>
+						</a>
+					</ul>
+				</div>
+				<div id="submenu2_div">
+					<ul>
+						<a href="reservation.html">
+							<li>예매하기</li>
+						</a>
+						<a href="timetable.html">
+							<li>상영시간표</li>
+						</a>
+					</ul>
+				</div>
+				<div id="submenu3_div">
+					<ul>
+						<a href="theater.html">
+							<li>전체극장</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div>
+			<button class="topBtn" onclick="window.scrollTo(0,0);">
+				<img src="image/TopBtn.jpg" alt="">
+			</button>
+		</div>
+		<article class="cont">
+			<form action="moviereservation.jsp" method="post">
+				<div class="movielist">
+					<ul>
+						<h1>영화</h1>
+						<li><a href="#" id="movie1" name="movie">나의 청춘은 너의 것</a></li>
+						<li><a href="#" id="movie2" name="movie">Her</a></li>
+						<li><a href="#" id="movie3" name="movie">라라랜드</a></li>
+						<li><a href="#" id="movie4" name="movie">레이니 데이 인 뉴욕</a></li>
+						<li><a href="#" id="movie5" name="movie">트롤 월드투어</a></li>
+						<li><a href="#" id="movie6" name="movie">저산너머</a></li>
+						<li><a href="#" id="movie7" name="movie">프리즌 이스케이프</a></li>
+						<li><a href="#" id="movie8" name="movie">마이스파이</a></li>
+						<li><a href="#" id="movie9" name="movie">호텔 레이크</a></li>
+					</ul>
+				</div>
+				<div class="theaterlist">
+					<ul>
+						<h1>
+							</a>영화관
+						</h1>
+						<li><a href="#" id="theater1" name="theater">CGV</a></li>
+						<li><a href="#" id="theater2" name="theater">MEGABOX</a></li>
+						<li><a href="#" id="theater3" name="theater">LOTTECINEMA</a></li>
+					</ul>
+				</div>
+				<div class="citylist">
+					<ul>
+						<h1>지역</h1>
+						<li><a href="#" id="city1" name="city">서울</a></li>
+						<li><a href="#" id="city2" name="city">경기/인천</a></li>
+						<li><a href="#" id="city3" name="city">충청/대전</a></li>
+						<li><a href="#" id="city4" name="city">전라/광주</a></li>
+						<li><a href="#" id="city5" name="city">경북/대구</a></li>
+						<li><a href="#" id="city6" name="city">경남/부산/울산</a></li>
+						<li><a href="#" id="city7" name="city">강원</a></li>
+						<li><a href="#" id="city8" name="city">제주</a></li>
+					</ul>
+				</div>
+				<div id="arealist">
+					<ul>
+						<h1>상세지역</h1>
+						<div class="seoul">
+							<li><a href="#" id="gasan" name="seoul">가산디지털</a></li>
+							<li><a href="#" id="gayang" name="seoul">가양</a></li>
+							<li><a href="#" id="gangdong" name="seoul">강동</a></li>
+							<li><a href="#" id="geondae" name="seoul">건대입구</a></li>
+							<li><a href="#" id="kimpo" name="seoul">김포공항</a></li>
+							<li><a href="#" id="nowon" name="seoul">노원</a></li>
+							<li><a href="#" id="doksan" name="seoul">독산</a></li>
+						</div>
+						<div class="kyeonggi_incheon">
+							<li><a href="#" id="geomdan" name="kyeonggi_incheon">검단</a></li>
+							<li><a href="#" id="ganggyo" name="kyeonggi_incheon">광교아울렛</a></li>
+							<li><a href="#" id="gangmyeong" name="kyeonggi_incheon">광명사거리</a></li>
+							<li><a href="#" id="gwangju_term" name="kyeonggi_incheon">광주터미널</a></li>
+							<li><a href="#" id="guri" name="kyeonggi_incheon">구리아울렛</a></li>
+							<li><a href="#" id="lafesta" name="kyeonggi_incheon">라페스타</a></li>
+						</div>
+						<div class="choongcheong_daejeon">
+							<li><a href="#" id="daejeon_gwanjeo"
+								name="choongcheong_daejeon">대전관저</a></li>
+							<li><a href="#" id="daejeon_dunsan"
+								name="choongcheong_daejeon">대전둔산</a></li>
+							<li><a href="#" id="daejeon_central"
+								name="choongcheong_daejeon">대전센트럴</a></li>
+							<li><a href="#" id="seosan" name="choongcheong_daejeon">서산</a></li>
+							<li><a href="#" id="seocheongju" name="choongcheong_daejeon">서청주</a></li>
+							<li><a href="#" id="ahsan" name="choongcheong_daejeon">아산터미널</a></li>
+						</div>
+						<div class="jeonna_gwangju">
+							<li><a href="#" id="gwangju" name="jeonna_gwangju">광주(백화점)</a></li>
+							<li><a href="#" id="gunsan" name="jeonna_gwangju">군산나운</a></li>
+							<li><a href="#" id="gunsanmall" name="jeonna_gwangju">군산몰</a></li>
+							<li><a href="#" id="iksan" name="jeonna_gwangju">익산모현</a></li>
+							<li><a href="#" id="jeonju_pyeonghwa" name="jeonna_gwangju">전주평화</a></li>
+							<li><a href="#" id="chungjangro" name="jeonna_gwangju">충장로</a></li>
+						</div>
+						<div class="kyeongbuk_daegu">
+							<li><a href="#" id="kyeongsan" name="kyeongbuk_daegu">경산</a></li>
+							<li><a href="#" id="gumiprime" name="kyeongbuk_daegu">구미프라임1번가</a></li>
+							<li><a href="#" id="kyeongju" name="kyeongbuk_daegu">경주</a></li>
+							<li><a href="#" id="gumigongdan" name="kyeongbuk_daegu">구미공단</a></li>
+							<li><a href="#" id="daegugwangjang" name="kyeongbuk_daegu">대구광장</a></li>
+							<li><a href="#" id="daeguhyeonpung" name="kyeongbuk_daegu">대구현풍</a></li>
+							<li><a href="#" id="dongseongro" name="kyeongbuk_daegu">동성로</a></li>
+						</div>
+						<div class="busan">
+							<li><a href="#" id="daeyeong" name="busan">대영</a></li>
+							<li><a href="#" id="dongrae" name="busan">동래</a></li>
+							<li><a href="#" id="dongbusan" name="busan">동부산아울렛</a></li>
+							<li><a href="#" id="sasang" name="busan">사상</a></li>
+							<li><a href="#" id="busanbonjeom" name="busan">부산본점</a></li>
+							<li><a href="#" id="seomyeon" name="busan">서면(전포동)</a></li>
+						</div>
+						<div class="kangwon">
+							<li><a href="#" id="namwonju" name="kangwon">남원주</a></li>
+							<li><a href="#" id="donghae" name="kangwon">동해</a></li>
+							<li><a href="#" id="wonjumusil" name="kangwon">원주무실</a></li>
+						</div>
+						<div class="jeju">
+							<li><a href="#" id="seoguipo" name="jeju">서귀포</a></li>
+							<li><a href="#" id="jejusamhwa" name="jeju">제주삼화지구</a></li>
+							<li><a href="#" id="jejuahra" name="jeju">제주아라</a></li>
+						</div>
+					</ul>
+				</div>
+		</article>
+		<footer>
+			<input type="hidden" id="selmovie" name="selmovie"> <input
+				type="hidden" id="seltheater" name="seltheater"> <input
+				type="hidden" id="selcity" name="selcity"> <input
+				type="hidden" id="selarea" name="selarea"> <input
+				type="hidden" id="reservid" name="reservid"> <input
+				type="submit" id="reservfinish" value="선택완료">
+			<script>
+				$('#reservfinish').click(function() {
+					var selmovie = $('.movielist .change').text();
+					var seltheater = $('.theaterlist .change').text();
+					var selcity = $('.citylist .change').text();
+					var selarea = $('#arealist .change').text();
+					var sessionId = sessionStorage.getItem("id");
+					$('#reservid').val(sessionId);
+					$('#selmovie').val(selmovie);
+					$('#seltheater').val(seltheater);
+					$('#selcity').val(selcity);
+					$('#selarea').val(selarea);
+
+					/*             	sessionStorage.setItem("selmovie", selmovie);
+					 sessionStorage.setItem("seltheater", seltheater);
+					 sessionStorage.setItem("selcity",selcity);
+					 sessionStorage.setItem("selarea",selarea); */
+				});
+			</script>
+			</form>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+<%@page import="com.cinemaw.member.db.MemberDAO5"%>
+<%@page import="com.cinemaw.member.db.MemberVo3"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" import="jsppack.*"

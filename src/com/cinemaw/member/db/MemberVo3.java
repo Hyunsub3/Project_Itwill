@@ -1,6 +1,6 @@
-package jsppack;
+package com.cinemaw.member.db;
 
-//ÁÂ¼®±îÁö ¼±ÅÃÇÑ ÈÄÀÇ µ¥ÀÌÅÍº£ÀÌ½º °ü·Ã Vo Å¬·¡½º
+//ì¢Œì„ê¹Œì§€ ì„ íƒí•œ í›„ì˜ ë°ì´í„°ë² ì´ìŠ¤ ê´€ë ¨ Vo í´ë˜ìŠ¤
 public class MemberVo3 {
 
 	private String reservid;
@@ -49,15 +49,15 @@ public class MemberVo3 {
 	public String getDatetime() {
 		return datetime;
 	}
-
+	
 	public void setDatetime(String datetime) {
 		this.datetime = datetime;
 	}
-
+	
 	public String getSitnum() {
 		return sitnum;
 	}
-
+	
 	public void setSitnum(String sitnum) {
 		this.sitnum = sitnum;
 	}
